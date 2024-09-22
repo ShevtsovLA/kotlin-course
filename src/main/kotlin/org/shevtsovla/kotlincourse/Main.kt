@@ -14,8 +14,8 @@
      val isLesser = 5 < 2
      val isGreaterOrEqual = 5 >= 7
      val isLesserOrEqual = 7 <= 5
-     val andResult = false && false
-     val orResult = true || false
+     val andResult = true && false
+     val orResult = false || true
      val notResult = !(5 > 2)
      var number = 7
      number += 4

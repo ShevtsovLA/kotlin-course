@@ -2,7 +2,33 @@ package org.shevtsovla.kotlincourse.lesson6
 
 fun main(){
 
-    fun getSeason(month: Int): String{
+    getSeason(4)
+    getSeason(15)
+
+    convertToHumanAge(1)
+    convertToHumanAge(14)
+
+    getTypeOfTransport(0)
+    getTypeOfTransport(7)
+
+    calculateBonus(736)
+    calculateBonus(4027)
+
+    checkFileType("mp4")
+    checkFileType("png")
+
+    convertTemperature(36.6, "C")
+    convertTemperature(123.4, "F")
+
+    recommendClothing(-40)
+    recommendClothing(13)
+
+    filmCategorie(4)
+    filmCategorie(27)
+
+}
+
+fun getSeason(month: Int): String{
         return when(month){
             1, 2, 12 -> "Winter"
             in 3..5 -> "Spring"
@@ -10,17 +36,17 @@ fun main(){
             in 9..11 -> "Autumn"
             else -> "Invalid month"
         }
-    }
+}
 
-    fun convertToHumanAge(dogAge: Double): Double{
+fun convertToHumanAge(dogAge: Int): Double{
         return if(dogAge <= 2){
             dogAge * 10.5
         } else {
             2 * 10.5 + (dogAge - 2) * 4
         }
-    }
+}
 
-    fun getTypeOfTransport(distance: Int): String{
+fun getTypeOfTransport(distance: Int): String{
         return if(distance <= 0){
             "Invalid distance"
         } else if(distance <= 1) {
@@ -30,26 +56,26 @@ fun main(){
         } else {
             "Auto transport"
         }
-    }
+}
 
-    fun calculateBonus(purchase: Int): Int{
+fun calculateBonus(purchase: Int): Int{
         return if(purchase <= 1000){
             purchase / 100 * 2
         } else {
             purchase / 100 * 5
         }
-    }
+}
 
-    fun checkFileType(extansion: String): String{
+fun checkFileType(extansion: String): String{
         return when(extansion) {
             "txt" , "doc" , "docx" -> "Text file"
             "png" , "jpeg" , "jpg", "bmp" -> "Picture"
             "xls" , "xlsx" -> "Chart"
             else -> "Unknown type"
         }
-    }
+}
 
-    fun convertTemperature(temperature: Double, unit: String): String{
+fun convertTemperature(temperature: Double, unit: String): String{
         return when (unit) {
             "C" -> {
                 val resault = (temperature * 9/5) + 32
@@ -62,9 +88,9 @@ fun main(){
             else -> "Invalid unit"
         }
 
-    }
+}
 
-    fun recommendClothing(temperature: Int): String {
+fun recommendClothing(temperature: Int): String {
         return when (temperature){
             in -30..-1 -> "Coat and hat"
             in 0..15 -> "Windbreaker"
@@ -72,9 +98,9 @@ fun main(){
             else -> "Stay at home"
         }
 
-    }
+}
 
-    fun filmCategorie(age: Int): String {
+fun filmCategorie(age: Int): String {
         return if (age in 0..12) {
             "For kids"
         } else if (age in 13..17) {
@@ -84,5 +110,5 @@ fun main(){
         } else {
             "Wrong age"
         }
-    }
 }
+
