@@ -2,31 +2,28 @@ package org.shevtsovla.kotlincourse.lesson8
 
 fun main() {
     //Задание 1: Извлечение Даты из Строки Лога. Используй indexOf или split для получения правой части сообщения.
-    val logString = "Пользователь вошел в систему -> 2021-12-01 09:48:23"
-    extractDateTime(logString)
+        extractDateTime("Пользователь вошел в систему -> 2021-12-01 09:48:23")
 
 //    Задание 2: Маскирование Личных Данных
-    val number = "4539 1488 0343 6467"
-    maskData(number)
+        maskData("4539 1488 0343 6467")
 
 //    Задание 3: Форматирование Адреса Электронной Почты. Используй replace
-    val email = "username@example.com"
-    println(replaceElements(email))
+        println(replaceElements("username@example.com"))
 
 //    Задание 4: Извлечение Имени Файла из Пути
-    val path = "C:/Пользователи/Документы/report.txt"
-    fileNameAndType(path)
+        fileNameAndType("C:/Пользователи/Документы/report.txt")
 
 //    Задание 5: Создание Аббревиатуры из Фразы.
-    val phrase = "Объектно-ориентированное программирование"
-    println(createAbbreviation(phrase))
+        println(createAbbreviation("Объектно-ориентированное программирование"))
 }
 
 
 fun extractDateTime(logString: String) {
-    val index = logString.indexOf("->")
-    val dateTime = logString.substring(index + 2).trim()  // Извлекаем всё, что находится после "->"
-    println("$dateTime")
+    val index = logString.indexOf("->") + 2
+    val date = logString.substring(index, index + 11)
+    val time = logString.substring(index + 11, index + 20)
+
+    println("$date \n $time")
 }
 
 fun maskData(number: String) {
