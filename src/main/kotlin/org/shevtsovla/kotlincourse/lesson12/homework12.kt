@@ -32,15 +32,11 @@ fun main() {
 
 //Задача 1:
 //Напишите функцию multiplyByTwo, которая принимает целое число и возвращает его, умноженное на 2.
-fun multiplyByTwo(a: Int): Int {
-    return a * 2
-}
+fun multiplyByTwo(a: Int) = a * 2
 
 //Задача 2:
 //Создайте функцию isEven, которая принимает целое число и возвращает true, если число чётное, и false в противном случае.
-fun isEven(b: Int): Boolean {
-    return b % 2 == 0
-}
+fun isEven(b: Int) = b % 2 == 0
 
 //Задача 3:
 //Напишите функцию printNumbersUntil, которая принимает целое число n и выводит на экран числа от 1 до n.
@@ -102,6 +98,7 @@ fun drawRectangle1(width: Int, height: Int) {
     bottomLine += "+\n"
     print(bottomLine)
 }
+
 fun drawRectangle2(width: Int, height: Int) {
     checkSize(width, height)
 
