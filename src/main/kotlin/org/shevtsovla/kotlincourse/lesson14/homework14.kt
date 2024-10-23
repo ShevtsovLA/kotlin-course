@@ -12,7 +12,7 @@ val map2 = mapOf<String, String>()
     println(map2.keys)
 //3. В изменяемый словарь с данными о прохождении тестов добавьте новый тест и его результат.
 val map3 = mutableMapOf<String, String>()
-    println(map3 + ("Test login" to "Passed"))
+    println(map3 + ("Test login" to "Passed")) // решить через map
 //4. Посчитайте количество успешных тестов в словаре с результатами.
 println(map3.count{ it.value.contains("Passed")})
 //5. Удалите из изменяемого словаря с баг-трекингом запись о баге, который был исправлен.
