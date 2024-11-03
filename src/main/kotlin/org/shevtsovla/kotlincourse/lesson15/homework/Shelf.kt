@@ -6,20 +6,12 @@ class Shelf(val capacity: Int)
     private val items: MutableList<String> = mutableListOf()
 
     fun addItem(item: String): Boolean {
-    return if (canAccommodate(item)) {
-        items.add(item)
-        true
-    } else {
-        false
+    return canAccommodate(item) && items.add(item)
     }
-}
+
     fun removeItem(item: String): Boolean {
-        return if (items.contains(item)) {
-            items.remove(item)
-            true
-        } else {
-            false
-        }
+        return items.remove(item)
+
     }
 
     fun canAccommodate(item: String): Boolean {

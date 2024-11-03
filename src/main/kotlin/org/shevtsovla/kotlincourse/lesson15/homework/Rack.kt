@@ -13,8 +13,6 @@ class Rack (val amount: Int) {
         }
     }
 
-    fun removeShelf(shelf: MutableList<String>): Boolean {
 
-    }
 
 }
