@@ -24,11 +24,6 @@ abstract class BaseClass(
         privateField = value
     }
 
-    protected fun getPrivateFieldValue(): String {
-        return privateField
-    }
-
-
     fun getAll(): String {
         return mapOf(
             "privateVal" to privateVal,
@@ -90,9 +85,6 @@ class ChildrenClass(
         setPrivateFieldValue(value)
     }
 
-    fun getPrivateField(): String {
-        return getPrivateFieldValue()
-    }
 
     // проверь, что выводится на печать при вызове функции printText()
     // и объясни, почему не происходит переопределение метода privatePrint()
