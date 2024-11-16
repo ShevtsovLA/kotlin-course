@@ -4,7 +4,7 @@ abstract class TemperatureRegulatableAndOpenableDevice(
     override val maxTemperature: Int
 ) : ProgrammableDevice(), TemperatureRegulatable, Openable {
 
-    private var currentTemperature: Int = 0
+    protected var currentTemperature: Int = 0
     private var isOpen: Boolean = false
 
     override fun setTemperature(temp: Int) {

@@ -1,7 +1,7 @@
 package org.shevtsovla.kotlincourse.lesson20.homework
 
 abstract class Refrigerator : TemperatureRegulatable,
-    Openable, Programmable, Powerable {}
+    Openable, Programmable, LightEmitting, Powerable {}
 
 abstract class WasherMachine : WaterConnection,
     Openable, Programmable, Powerable, AutomaticShutdown, Timable,
@@ -18,10 +18,10 @@ abstract class RobotVacuumCleaner : AutomaticShutdown, Movable,
 
 abstract class MechanicalClock : Mechanical, Timable {}
 
-abstract class Flashlight : Powerable, BatteryOperated {}
+abstract class Flashlight : LightEmitting, Powerable, BatteryOperated {}
 
 abstract class CoffeeMachine : WaterContainer,
     Openable, Programmable, Powerable, AutomaticShutdown, Cleanable {}
 
 abstract class SmartSpeaker : SoundEmitting, Programmable, Powerable,
-    Timable{}
+    Timable {}
