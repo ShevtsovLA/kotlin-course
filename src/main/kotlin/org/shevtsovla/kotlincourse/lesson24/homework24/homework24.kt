@@ -2,80 +2,80 @@ package org.shevtsovla.kotlincourse.lesson24.homework24
 
 fun main() {
 
-    //NullPointerException
-    try {
-        val a = null
-        a!!
+//    //NullPointerException
+//    try {
+//        null!!
 //    } catch (e: Throwable) {
 //    println("NullPointerException")
 //    }
-
-        //ArrayIndexOutOfBoundsException
+//
+//        //ArrayIndexOutOfBoundsException
 //    try {
-        val b = listOf(1, 2, 3)
-        b[3]
+//        val b = listOf(1, 2, 3)
+//        b[3]
 //    } catch (e: Throwable) {
 //        println("ArrayIndexOutOfBoundsException")
 //    }
-
-        //ClassCastException
+//
+//        //ClassCastException
 //    try {
-        val c = 1.1 as String
+//        val c = 1.1 as String
 //    } catch (e: Throwable) {
 //        println("ClassCastException")
 //    }
-
-        //NumberFormatException
+//
+//        //NumberFormatException
 //    try {
-        val d = "1,2".toDouble()
-        println(d)
+//        val d = "1,2".toDouble()
+//        println(d)
 //    } catch (e: Throwable) {
 //        println("NumberFormatException")
 //    }
-
-        //IllegalArgumentException
+//
+//        //IllegalArgumentException
 //    try {
-        function1(131)
+//        function1(131)
 //    } catch (e: Throwable) {
 //        println("IllegalArgumentException")
 //    }
-
-        //IllegalStateException
+//
+//        //IllegalStateException
 //    try {
-        function2(99)
+//        function2(99)
 //    } catch (e: Throwable) {
 //        println("IllegalStateException")
 //    }
-
-        //OutOfMemoryError
+//
+//        //OutOfMemoryError
 //    try {
-        val g = mutableListOf("")
-        while (true) {
-            g.add("раз")
-        }
+//        val g = mutableListOf("")
+//        while (true) {
+//            g.add("раз")
+//        }
 //    } catch (e: Throwable) {
 //        println("OutOfMemoryError")
 //    }
-
-        //StackOverflowError
+//
+//        //StackOverflowError
 //    try {
-        function3()
+//        function3()
 //    } catch (e: Throwable) {
 //        println("StackOverflowError")
 //    }
-    } catch (e: Exception) {
-        when (e) {
-            is NullPointerException -> println("NullPointerException")
-            is ArrayIndexOutOfBoundsException -> println("ArrayIndexOutOfBoundsException")
-            is ClassCastException -> println("ClassCastException")
-            is NumberFormatException -> println("NumberFormatException")
-            is IllegalArgumentException -> println("IllegalArgumentException")
-            is IllegalStateException -> println("IllegalStateException")
-            is OutOfMemoryError -> println("OutOfMemoryError")
-            is StackOverflowError -> println("StackOverflowError")
-        }
-
-    }
+////    } catch (e: Throwable) {
+////        when (e) {
+////            is NullPointerException -> println("NullPointerException")
+////            is ArrayIndexOutOfBoundsException -> println("ArrayIndexOutOfBoundsException")
+////            is ClassCastException -> println("ClassCastException")
+////            is NumberFormatException -> println("NumberFormatException")
+////            is IllegalArgumentException -> println("IllegalArgumentException")
+////            is IllegalStateException -> println("IllegalStateException")
+////            is OutOfMemoryError -> println("OutOfMemoryError")
+////            is StackOverflowError -> println("StackOverflowError")
+//    // else -> println("Unknown error")
+////        }
+//
+////    }
 
     try {
         throw CustomException("Какое-то исключение")
@@ -88,7 +88,7 @@ fun main() {
         println(h[3])
     } catch (e: ArrayIndexOutOfBoundsException) {
         println("ArrayIndexOutOfBoundsException")
-        throw AnotherCustomExeption(e)
+        throw RuntimeException("", e)
     }
 
 }
