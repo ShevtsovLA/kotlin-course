@@ -66,10 +66,9 @@ fun sumByCondition(
 fun<A, B> combineAndTransform(
     collection1: Collection<A>,
     collection2: Collection<A>,
-    mixer: (Collection<A>) -> Collection<B>
+    mixer: (Collection<A>,  Collection<A>) -> Collection<B>
 ): Collection<B> {
-    val combined = collection1 + collection2
-    return mixer(combined)
+    return mixer(collection1, collection2)
 }
 
 
@@ -110,13 +109,13 @@ fun main() {
     val collection1 = listOf(1, 2, 3, 4)
     val collection2 = listOf(5, 6, 7, 8)
     //Преобразуем эти списки целых чисел в список строк.
-    val result6 = combineAndTransform(collection1, collection2) { combined ->
-        combined.map { "$it - число" }
+    val result6 = combineAndTransform(collection1, collection2) {collection1, collection2 ->
+        (collection1 + collection2).map { "$it - число" }
     }
     println(result6)
     //Преобразуем в множество чисел
-    val result7 = combineAndTransform(collection1, collection2) { combined ->
-        combined.map { it.toDouble() * 1.1 }.toSet()
+    val result7 = combineAndTransform(collection1, collection2) { collection1, collection2 ->
+        (collection1.map { it.toDouble() * 1.1 } + collection2.map { it.toDouble() * 1.1 }).toSet()
     }
     println(result7)
 
