@@ -48,8 +48,7 @@ class CerealStorageImpl(
     }
 
     override fun removeContainer(cereal: Cereal): Boolean {
-        val currentAmount = storage[cereal] ?: return false
-        return if (currentAmount == 0f) {
+        return if (storage.containsKey(cereal)) {
             storage.remove(cereal)
             true
         } else {
@@ -66,7 +65,9 @@ class CerealStorageImpl(
     }
 
     override fun toString(): String {
-        return "Это хранилище."
+        return storage.entries.joinToString(", ") {
+            "${it.key}: ${it.value} единиц"
+        }.ifEmpty { "Пусто." }
     }
 
     private fun checkStorageCapacity(cereal: Cereal) {

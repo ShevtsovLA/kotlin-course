@@ -116,5 +116,20 @@ class CerealStorageImplTest {
         assertEquals(0f, finalRemainingCapacity, 0.01f)
     }
 
+    @Test
+    fun `should return correct representation of the storage`() {
+        storage.addCereal(Cereal.BULGUR, 4f)
+        storage.addCereal(Cereal.MILLET, 6f)
+
+        val storageToString = storage.toString()
+        Assertions.assertEquals("BULGUR: 4.0 единиц, MILLET: 6.0 единиц", storageToString)
+    }
+
+    @Test
+    fun `should return a message when empty`() {
+        val storageToString = storage.toString()
+        Assertions.assertEquals("Пусто.", storageToString)
+    }
+
 
 }
