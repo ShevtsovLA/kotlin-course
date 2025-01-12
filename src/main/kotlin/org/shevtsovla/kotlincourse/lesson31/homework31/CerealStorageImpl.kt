@@ -48,12 +48,7 @@ class CerealStorageImpl(
     }
 
     override fun removeContainer(cereal: Cereal): Boolean {
-        return if (storage.containsKey(cereal)) {
-            storage.remove(cereal)
-            true
-        } else {
-            false
-        }
+        return storage.remove(cereal,0f)
     }
 
     override fun getAmount(cereal: Cereal): Float {
